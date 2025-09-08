@@ -1,0 +1,31 @@
+{
+    "name": "erisrayanesh/laramod",
+    "description": "A modular infrastructure",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">= 7.3",
+        "illuminate/support": ">=9.0",
+        "illuminate/console": ">=9.0",
+        "illuminate/view": ">=9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ErisRayanesh\\Laramod\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+          "dev-master": "1.0.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "ErisRayanesh\\Laramod\\Providers\\LaramodServiceProvider"
+            ],
+            "aliases": {
+                "Modules": "ErisRayanesh\\Laramod\\Facades\\Modules"
+            }
+        }
+    }
+}
