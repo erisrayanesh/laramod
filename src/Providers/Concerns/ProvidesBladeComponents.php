@@ -40,7 +40,7 @@ trait ProvidesBladeComponents
 
     protected function getBladeComponentsNamespace(): string
     {
-        return (new \ReflectionClass(static::class))->getNamespaceName() . "\\Http\\View\\Components";
+        return (new \ReflectionClass(static::class))->getNamespaceName() . "\\Views\\Components";
     }
 
     protected function getBladeComponentsPrefix(): string
