@@ -113,6 +113,12 @@ abstract class BaseModuleServiceProvider extends ServiceProvider
         if (method_exists($this, 'registerTranslations')) {
             $this->registerTranslations();
         }
+        
+        if (method_exists($this, 'registerPolicies')) {
+            $this->registerPolicies();
+        }
+        
+        
 
         //
         if (!$this->app->runningInConsole()) {
