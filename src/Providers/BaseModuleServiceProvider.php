@@ -25,9 +25,19 @@ abstract class BaseModuleServiceProvider extends ServiceProvider
         parent::__construct($app);
         $this->resolveBasePath();
         $this->booting(function() {
+            if (method_exists($this, 'publishingResources')) {
+                $this->publishingResources();
+            }
+
             $this->publishResources();
             $this->registerModule();
+
+            if (method_exists($this, 'registeringResources')) {
+                $this->registeringResources();
+            }
+
             $this->registerResources();
+
         });
     }
 
@@ -93,7 +103,6 @@ abstract class BaseModuleServiceProvider extends ServiceProvider
 
     protected function registerResources()
     {
-
         if (method_exists($this, 'registerEvents')) {
             $this->registerEvents();
         }
